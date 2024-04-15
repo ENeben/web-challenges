@@ -1,0 +1,12 @@
+header {
+  background-color: var(--header-bg);
+  width: 70%;
+  position: fixed;
+  top: 20px;
+  height: 80px;
+}
+
+h1 {
+  color: var(--header-text);
+  text-align: center;
+}

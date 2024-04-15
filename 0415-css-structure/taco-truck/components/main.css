@@ -1,0 +1,18 @@
+main {
+  background-color: var(--main-bg);
+  margin-top: 80px;
+}
+
+h2 {
+  background-color: var(--main-title-bg);
+  color: var(--main-text);
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

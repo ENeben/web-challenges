@@ -1,0 +1,14 @@
+li {
+  list-style: none;
+  width: 40%;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 10px;
+  padding: 10px 10px 20px 10px;
+}
+
+h4,
+p {
+  font-weight: normal;
+  margin: 5px 0;
+}
