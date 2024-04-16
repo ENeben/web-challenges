@@ -16,7 +16,7 @@ const text =
   "I wanted to ask my boot camp fellow students something about JavaScript and accidentally sent it to my grandma. Grandma is confused...";
 let numberOfLikes = 5;
 const user = "JavaScriptLearner42";
-let isReported = false;
+const isReported = false;
 
 // --^-- write your code here --^--
 
