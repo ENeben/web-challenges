@@ -38,7 +38,7 @@ divideButton.addEventListener("click", () => {
 });
 
 exponentButton.addEventListener("click", () => {
-  const resultExponentButton = operand2 ** operand1;
+  const resultExponentButton = operand1 ** operand2;
   console.log(resultExponentButton);
   // 5. Raise "operand1" to the value of "operand2" and store the result in a variable. Log the variable's value to the console.
 });
