@@ -9,10 +9,10 @@ button.addEventListener("click", () => {
 
   if (age > 12 && age < 20) {
     console.log("You are a teen.");
-    output.textContent = "You are a teen.";
+    output.innerHTML = "You are a teen.";
   } else {
     console.log("You are not a teen.");
-    output.textContent = "You are not a teen.";
+    output.innerHTML = "You are not a teen.";
   }
 
   // Exercise:
