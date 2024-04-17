@@ -24,13 +24,13 @@ if (number % 2) {
 const numberOfHotdogs = 42;
 
 if (numberOfHotdogs < 5) {
-  console.log(numberOfHotdogs * 2);
+  console.log(numberOfHotdogs * 2 + " euros");
 } else if (numberOfHotdogs < 100) {
-  console.log(numberOfHotdogs * 1.5);
+  console.log(numberOfHotdogs * 1.5 + " euros");
 } else if (numberOfHotdogs < 1000000) {
-  console.log(numberOfHotdogs * 1);
+  console.log(numberOfHotdogs * 1 + " euros");
 } else {
-  console.log(numberOfHotdogs * 0.1);
+  console.log(numberOfHotdogs * 0.1 + " euros");
 }
 
 // Part 4: Daytime
