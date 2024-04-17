@@ -31,7 +31,6 @@ console.log(text);
 console.log(numberOfLikes);
 console.log(user);
 console.log(isReported);
-
 numberOfLikes++;
 console.log(numberOfLikes);
 
