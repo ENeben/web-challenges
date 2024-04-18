@@ -287,11 +287,12 @@ width, etc. */
   }
 
   .product-card {
-    width: 100%;
+    width: 95%;
   }
 
   .--forest {
     grid-area: 1 / 1 / 3 / 5;
+    width: 100%;
     height: 100%;
   }
 
