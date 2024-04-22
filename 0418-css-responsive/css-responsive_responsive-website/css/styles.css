@@ -296,8 +296,6 @@ width, etc. */
     height: 100%;
   }
 
-  /* in forest height: 100% gesetzt. Ohne wurde quasi eine row im Grid-Raster ausgesetzt. Warum?? */
-
   .intro-text {
     grid-area: 3 / 1 / 4 / 3;
   }
