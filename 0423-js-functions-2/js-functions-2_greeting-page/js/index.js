@@ -25,6 +25,10 @@ const display = document.querySelector('[data-js="display"]');
 function getGreeting() {
   const currentTime = new Date().getHours();
 
+  if (typeof currentTime !== "number") {
+    return "NaN";
+  }
+
   if (currentTime >= 6 && currentTime <= 12) {
     return "Good Morning";
   } else if (currentTime >= 13 && currentTime <= 18) {
@@ -38,6 +42,10 @@ function getGreeting() {
 
 function getDayColor() {
   const currentDay = new Date().getDay();
+
+  if (typeof currentDay !== "number") {
+    return "NaN";
+  }
 
   if (currentDay === 1) {
     return "darkgray";
