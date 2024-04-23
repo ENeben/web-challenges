@@ -35,10 +35,23 @@ function getGreeting() {
     return "Good Afternoon";
   } else if (currentTime >= 19 && currentTime <= 22) {
     return "Good Evening";
-  } else if (currentTime >= 23 && currentTime <= 5) {
+  } else {
     return "Good Night";
   }
 }
+
+// andere Schreibweise wäre:
+
+// function getGreetingTwo() {
+//   const currentTime = new Date().getHours();
+
+//   if (typeof currentTime !== "number") return "NaN";
+
+//   if (currentTime >= 6 && currentTime <= 12) return "Good Morning";
+//   if (currentTime >= 13 && currentTime <= 18) return "Good Afternoon";
+//   if (currentTime >= 19 && currentTime <= 22) return "Good Evening";
+//   return "Good Night";
+// }
 
 function getDayColor() {
   const currentDay = new Date().getDay();
@@ -51,7 +64,7 @@ function getDayColor() {
     return "darkgray";
   } else if (currentDay >= 2 && currentDay <= 5) {
     return "lightblue";
-  } else if (currentDay === 6 || currentDay === 0) {
+  } else {
     return "hotpink";
   }
 }
