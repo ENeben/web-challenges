@@ -13,8 +13,8 @@
   <body>
     <main>
       <h1>Service</h1>
-      <h2>Customer complaint form</h2>
-      <p>
+      <h2 id="title">Customer complaint form</h2>
+      <p id="description">
         Fill out this form to complain to customer support about our poor
         service. Please note that due to an increased volume of requests, it
         currently takes us several months to respond to your request.
@@ -23,7 +23,11 @@
         <strong>Note:</strong> This form is not intended to be used for any
         other purpose than to complain to customer support.
       </p>
-      <form data-js="form">
+      <form
+        aria-labelledby="title"
+        aria-describedby="description"
+        data-js="form"
+      >
         <fieldset>
           <legend>Personal Information</legend>
           <label for="first-name">First Name</label>
