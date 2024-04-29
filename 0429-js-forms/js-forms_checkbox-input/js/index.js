@@ -32,13 +32,10 @@ tosCheckbox.addEventListener("change", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // --v-- write your code here --v--
   if (!tosCheckbox.checked) {
     return alert("Please agree to our terms of service.");
   }
-  // --^-- write your code here --^--
 
-  // eslint-disable-next-line no-alert
   showSuccess();
   alert("Form submitted");
 });
