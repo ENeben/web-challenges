@@ -13,10 +13,6 @@ function showTosError() {
   tosError.removeAttribute("hidden");
 }
 
-function hideSuccess() {
-  success.setAttribute("hidden", "");
-}
-
 function showSuccess() {
   success.removeAttribute("hidden");
 }
