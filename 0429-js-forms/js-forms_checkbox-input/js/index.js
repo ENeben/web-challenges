@@ -17,7 +17,7 @@ function showSuccess() {
   success.removeAttribute("hidden");
 }
 
-tosCheckbox.addEventListener("change", () => {
+tosCheckbox.addEventListener("input", () => {
   if (tosCheckbox.checked) {
     hideTosError();
   } else {
