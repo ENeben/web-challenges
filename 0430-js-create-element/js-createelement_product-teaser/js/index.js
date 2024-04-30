@@ -45,5 +45,7 @@ document.body.append(newProduct);
 
 const buyButton = document.querySelector('[data-js="buy-button"]');
 buyButton.addEventListener("click", () => {
-  console.log(`The product's name is ${nameOf} and the price is ${price}.`);
+  console.log(
+    `The product's name is ${productName} and the price is ${price}.`
+  );
 });
