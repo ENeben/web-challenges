@@ -1,6 +1,6 @@
 console.clear();
 
-const nameOf = "Queen angelfish";
+const productName = "Queen angelfish";
 const description =
   "With their bright colors and deep, laterally compressed bodies, marine angelfishes are some of the more conspicuous residents of the aquarium. The queen angelfish grows to be 45 cm. With neon blue and yellow scales and iridescent purple and orange markings, surprisingly it is not conspicuous, and actually hides very well, and is very shy.";
 const category1 = "Freshwater";
@@ -18,7 +18,7 @@ newProduct.classList.add("product");
 newProduct.innerHTML = `
       <div class="product__body">
         <div class="product__text-container">
-          <h2 class="product__name">${nameOf}</h2>
+          <h2 class="product__name">${productName}</h2>
           <ul class="product__categories">
             <li class="product__category">${category1}</li>
             <li class="product__category">${category2}</li>

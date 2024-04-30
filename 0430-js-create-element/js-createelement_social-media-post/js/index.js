@@ -33,9 +33,6 @@ newFooter.append(newUsername);
 const newButton = document.createElement("button");
 newButton.classList.add("post__button");
 newButton.type = "button";
-newButton.setAttribute("data-js", "new-like-button");
 newButton.textContent = "♥ Like";
+newButton.addEventListener("click", handleLikeButtonClick);
 newFooter.append(newButton);
-
-const newLikeButton = document.querySelector('[data-js="new-like-button"]');
-newLikeButton.addEventListener("click", handleLikeButtonClick);

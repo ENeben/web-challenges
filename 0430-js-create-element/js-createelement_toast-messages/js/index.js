@@ -12,5 +12,5 @@ addButton.addEventListener("click", () => {
 });
 
 clearButton.addEventListener("click", () => {
-  toastContainer.innerHTML = "";
+  toastContainer.innerHTML = `<li class="toast-container__message">I'm a toast message.</li>`;
 });
