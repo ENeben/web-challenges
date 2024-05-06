@@ -1,0 +1,18 @@
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 9aff6d5c-ae39-4e12-b0ff-93ebbbfb1d52 successfully sent 200.
+querySelectorAll:1 Third-party cookie will be blocked. Learn more in the Issues tab.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 25070600-29ef-4040-bbef-0be9b7ad7cd0 successfully sent 200.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 822ba4ca-c45f-48f0-aefa-5d5a2c63c164 successfully sent 200.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 272d5409-cb86-4b7f-aaf2-8dbc13ff2503 successfully sent 200.
+querySelectorAll:1 Third-party cookie will be blocked. Learn more in the Issues tab.
+querySelectorAll:1 Third-party cookie will be blocked. Learn more in the Issues tab.
+const titles = document.querySelectorAll("h2");
+
+console.log(titles);
+
+titles.forEach((title) => {
+    title.addEventListener("click", () => {
+        title.style.backgroundColor = "#f00";
+    });
+});
+VM758:3 NodeList(12) [h2.document-toc-heading, h2.document-toc-heading, h2#syntax, h2#examples, h2#specifications, h2#browser_compatibility, h2#see_also, h2, h2.footer-nav-heading, h2.footer-nav-heading, h2.footer-nav-heading, h2.footer-nav-heading]0: h2.document-toc-heading1: h2.document-toc-heading2: h2#syntax3: h2#examples4: h2#specifications5: h2#browser_compatibility6: h2#see_also7: h28: h2.footer-nav-heading9: h2.footer-nav-heading10: h2.footer-nav-heading11: h2.footer-nav-headinglength: 12[[Prototype]]: NodeList
+undefined
