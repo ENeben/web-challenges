@@ -10,6 +10,8 @@ const pageProfile = document.querySelector('[data-js="page-profile"]');
 
 const allPages = document.querySelectorAll('[data-js*="page"]');
 
+console.log(allPages);
+
 linkHome.addEventListener("click", () => {
   allPages.forEach((page) => {
     page.classList.remove("current");

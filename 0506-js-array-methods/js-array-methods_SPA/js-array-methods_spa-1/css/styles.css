@@ -35,7 +35,7 @@ body {
   padding: 3rem;
 }
 
-.page.current {
+.current {
   display: block;
 }
 
