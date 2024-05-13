@@ -1,0 +1,74 @@
+:root {
+  --small-distance: 10px;
+  --medium-distance: 20px;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: var(--medium-distance);
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-distance);
+}
+
+header {
+  background-color: #db5473;
+  color: var(--white);
+  padding: var(--medium-distance) var(--small-distance);
+  border-radius: var(--small-distance);
+}
+
+main {
+  background-color: #f8d378;
+  padding: var(--small-distance);
+  border-radius: var(--small-distance);
+  display: flex;
+  gap: var(--small-distance);
+}
+
+.cards {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-distance);
+}
+
+.section {
+  background-color: #62d3a5;
+  padding: var(--medium-distance) var(--small-distance);
+  border-radius: var(--small-distance);
+  flex-grow: 1;
+  flex-basis: 1;
+}
+
+.active {
+  background-color: #204f97;
+  color: var(--white);
+  flex-grow: 4;
+  flex-basis: 2;
+}
+
+.information {
+  width: 40%;
+  background-color: #71c6ed;
+  padding: var(--small-distance);
+  border-radius: var(--small-distance);
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-distance);
+}
+
+footer {
+  background-color: #330393;
+  color: var(--white);
+  padding: var(--small-distance);
+  border-radius: var(--small-distance);
+}
