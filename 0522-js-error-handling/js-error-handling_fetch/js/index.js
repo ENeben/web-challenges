@@ -7,20 +7,19 @@ const errorElement = document.querySelector("[data-js='error']");
 async function fetchUserData(url) {
   try {
     const response = await fetch(url);
-    //hier Abfrage von contentType uns Ausloggen in der Console:
+
     const contentType = response.headers.get("content-type");
     console.log("contentType: ", contentType);
-    //console.log("contentType.media-type: ", contentType.media - type);
 
-    //hier if-Abfrage, throwing custom error
+    const mediaType = contentType.split(";")[0];
+
     if (!response.ok) {
       throw new Error(`Failed to fetch data! Status code: ${response.status}`);
     }
 
-    //hier if-Abfrage, falls der Content-Type nicht JSON ist
     if (!contentType.includes("application/json")) {
       throw new Error(
-        `Oops, we haven't got JSON! Instead we received: ${contentType}`
+        `Oops, we haven't got JSON! Instead we received: ${mediaType}`
       );
     }
 
@@ -54,8 +53,7 @@ endpoints.forEach((endpoint) => {
       <img alt="${user.first_name} ${user.last_name}" src="${user.avatar}" class="user__image"/>
       <h2>${user.first_name} ${user.last_name}</h2>
       `;
-      //hier anpassen von textContent zum jeweiligen error
-      errorElement.textContent = result.error;
+      errorElement.textContent = "";
     }
   });
 });
