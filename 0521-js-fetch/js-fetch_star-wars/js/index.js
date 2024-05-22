@@ -38,18 +38,40 @@ const EXAMPLE_DATA = {
 const firstCard = Card(EXAMPLE_DATA);
 renderElement(firstCard);
 
-fetchDataAndRender();
-
 // --v-- your code below this line --v--
 
-async function fetchDataAndRender() {
-  const response = await fetch("https://swapi.py4e.com/api/people");
-  const data = await response.json();
-  console.log("data: ", data);
+const URL = "https://swapi.py4e.com/api/people/";
 
-  const characters = data.results;
-  characters.forEach((character) => {
-    const card = Card(character);
-    renderElement(card);
-  });
+async function fetchDataAndRender() {
+  let counter = 1;
+  let hasNextPage = true;
+
+  try {
+    while (hasNextPage) {
+      const response = await fetch(`${URL}?page=${counter}`);
+
+      if (!response.ok) {
+        throw new Error(
+          `Error at page ${counter}. Failed to fetch data! Status code: ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+      console.log("data: ", data);
+
+      const characters = data.results;
+      characters.forEach((character) => {
+        const card = Card(character);
+        renderElement(card);
+      });
+
+      hasNextPage = data.next !== null;
+      counter++;
+    }
+  } catch (error) {
+    console.log("error: ", error);
+    return { error: error };
+  }
 }
+
+fetchDataAndRender();
