@@ -4,6 +4,10 @@ const actionsElement = document.querySelector("[data-js='actions']");
 const userElement = document.querySelector("[data-js='user']");
 const errorElement = document.querySelector("[data-js='error']");
 
+async function addStatusCat(status) {
+  return `https://http.cat/${status}`;
+}
+
 async function fetchUserData(url) {
   try {
     const response = await fetch(url);
@@ -14,7 +18,11 @@ async function fetchUserData(url) {
     const mediaType = contentType.split(";")[0];
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch data! Status code: ${response.status}`);
+      const statusImage = await addStatusCat(response.status);
+      throw {
+        message: `Failed to fetch data! Status code: ${response.status}`,
+        statusImage,
+      };
     }
 
     if (!contentType.includes("application/json")) {
@@ -25,6 +33,9 @@ async function fetchUserData(url) {
 
     return await response.json();
   } catch (error) {
+    if (error.statusImage) {
+      return { error: error.message, statusImage: error.statusImage };
+    }
     return { error: error.message };
   }
 }
@@ -45,7 +56,9 @@ endpoints.forEach((endpoint) => {
     const result = await fetchUserData(endpoint.url);
 
     if (result.error) {
-      errorElement.textContent = result.error;
+      errorElement.innerHTML = result.statusImage
+        ? `${result.error}<br><img src="${result.statusImage}" alt="Error Image" style="width: 100%;">`
+        : result.error;
       userElement.innerHTML = "No user data available.";
     } else {
       const user = result.data;
