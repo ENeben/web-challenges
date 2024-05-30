@@ -9,8 +9,8 @@ function ArticleComponent() {
   return (
     <article className="article">
       <h2 className="article__title">I am the second headline.</h2>
-      <label htmlFor="input"></label>
-      <input id="input"></input>
+      <label htmlFor="keksdose"></label>
+      <input id="keksdose"></input>
       <a className="article__link" href="https://react.dev/">
         Discover React!
       </a>
