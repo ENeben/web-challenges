@@ -6,5 +6,13 @@ export default function App() {
 }
 
 function Smiley({ isHappy }) {
-  return <p>{isHappy ? ":)" : ":("}</p>;
+  return (
+    <p>
+      {isHappy ? (
+        <span aria-label="happy-emoji">😁</span>
+      ) : (
+        <span aria-label="sad-emoji">😟</span>
+      )}
+    </p>
+  );
 }
