@@ -12,6 +12,10 @@ export default function App() {
     console.log(code);
   }
 
+  function handleReset() {
+    setCode("");
+  }
+
   return (
     <div className="container">
       <div className="button-container">
@@ -32,12 +36,7 @@ export default function App() {
         </button>{" "}
       </div>
 
-      <button
-        type="button"
-        onClick={() => {
-          console.log("Reset Code!");
-        }}
-      >
+      <button type="button" onClick={handleReset}>
         Reset
       </button>
 
