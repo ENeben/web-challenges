@@ -5,10 +5,14 @@ export default function App() {
   const [isActive, setIsActive] = useState(false);
 
   function handleClick() {
+    console.log("button clicked");
     setIsActive(!isActive);
-    // Check that the value changes correctly.
+    // setIsActive PLANT nur die Zustandsänderung
     console.log(isActive);
   }
+
+  // erst NACH der Funktion, in der die Zustandsänderung geplant wird,
+  // wird die Zustandsänderung und das erneute Rendern ausgeführt.
 
   return (
     <main>
