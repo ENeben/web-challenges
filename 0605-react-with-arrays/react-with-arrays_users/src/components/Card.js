@@ -1,6 +1,7 @@
 import "./Card.css";
 import Tag from "./Tag";
 import Button from "./Button";
+
 function Card({ user }) {
   return (
     <article className="card">
