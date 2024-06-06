@@ -5,8 +5,8 @@ export default function Counter() {
 
   function handleIncrement() {
     setCount(count + 1);
-    setCount(count + 1);
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
   }
 
   return (
