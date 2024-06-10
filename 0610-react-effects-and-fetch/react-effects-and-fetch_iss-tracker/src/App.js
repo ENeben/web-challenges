@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Controls from "./components/Controls";
 import Map from "./components/Map";
 import "./styles.css";
@@ -11,7 +11,36 @@ export default function App() {
     latitude: 0,
   });
 
-  async function getISSCoords() {}
+  useEffect(() => {
+    async function getISSCoords() {
+      try {
+        const response = await fetch(URL);
+
+        if (!response.ok) {
+          throw new Error(
+            `Failed to fetch data! Status Code: ${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        setCoords(data);
+      } catch (error) {
+        alert("An error occurred: ", error);
+      }
+    }
+
+    getISSCoords();
+
+    const intervalID = setInterval(getISSCoords, 5000);
+
+    return function cleanup() {
+      clearInterval(intervalID);
+    };
+  }, []);
+
+  // Wann wird die cleanup funktion ausgeführt?
+  // wie kann der Refresh-Button wieder funktionieren?
 
   return (
     <main>
@@ -19,7 +48,7 @@ export default function App() {
       <Controls
         longitude={coords.longitude}
         latitude={coords.latitude}
-        onRefresh={getISSCoords}
+        // onRefresh={getISSCoords}
       />
     </main>
   );
