@@ -11,36 +11,33 @@ export default function App() {
     latitude: 0,
   });
 
-  useEffect(() => {
-    async function getISSCoords() {
-      try {
-        const response = await fetch(URL);
+  async function getISSCoords() {
+    try {
+      const response = await fetch(URL);
 
-        if (!response.ok) {
-          throw new Error(
-            `Failed to fetch data! Status Code: ${response.status}`
-          );
-        }
-
-        const data = await response.json();
-
-        setCoords(data);
-      } catch (error) {
-        alert("An error occurred: ", error);
+      if (!response.ok) {
+        throw new Error(
+          `Failed to fetch data! Status Code: ${response.status}`
+        );
       }
-    }
 
+      const data = await response.json();
+
+      setCoords(data);
+    } catch (error) {
+      alert("An error occurred: ", error);
+    }
+  }
+
+  useEffect(() => {
     getISSCoords();
 
     const intervalID = setInterval(getISSCoords, 5000);
 
-    return function cleanup() {
+    return () => {
       clearInterval(intervalID);
     };
   }, []);
-
-  // Wann wird die cleanup funktion ausgeführt?
-  // wie kann der Refresh-Button wieder funktionieren?
 
   return (
     <main>
@@ -48,7 +45,7 @@ export default function App() {
       <Controls
         longitude={coords.longitude}
         latitude={coords.latitude}
-        // onRefresh={getISSCoords}
+        onRefresh={getISSCoords}
       />
     </main>
   );
