@@ -12,13 +12,16 @@ export default function StatusCheck() {
     try {
       const response = await fetch(apiStatusUrl);
 
-      if (!response.ok) {
-        setStatusIcon("❌");
+      if (response.status === 404) {
         throw new Error(
           `Failed to fetch data! Status Code: ${response.status}`
         );
       }
-      setStatusIcon("✅");
+      if (!response.ok) {
+        setStatusIcon("❌");
+      } else {
+        setStatusIcon("✅");
+      }
     } catch (error) {
       console.error("An error occurred: ", error.message);
       setStatusIcon("🚨");
