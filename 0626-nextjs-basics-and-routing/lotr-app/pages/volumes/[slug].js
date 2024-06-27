@@ -9,7 +9,7 @@ export default function VolumeDetail() {
 
   const currentVolume = volumes.find((volume) => volume.slug === slug);
 
-  if (!currentVolume) {
+  if (!currentVolume || !slug) {
     return <p>Volume not found.</p>;
   }
 
@@ -39,13 +39,13 @@ export default function VolumeDetail() {
         alt={`The volume cover of ${currentVolume.title}`}
       />
       <section className="prev-next-links">
-        {prevVolume !== null && (
+        {prevVolume && (
           <Link href={`/volumes/${prevVolume.slug}`}>
             Previous Volume: {prevVolume.title}
           </Link>
         )}
         <br />
-        {nextVolume !== null && (
+        {nextVolume && (
           <Link href={`/volumes/${nextVolume.slug}`}>
             Next Volume: {nextVolume.title}
           </Link>
