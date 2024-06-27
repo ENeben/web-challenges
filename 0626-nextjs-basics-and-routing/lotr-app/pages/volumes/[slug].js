@@ -6,9 +6,12 @@ import Image from "next/image";
 export default function VolumeDetail() {
   const router = useRouter();
   const { slug } = router.query;
-  console.log("slug: ", slug);
 
   const currentVolume = volumes.find((volume) => volume.slug === slug);
+
+  if (!currentVolume) {
+    return <p>Volume not found.</p>;
+  }
 
   const currentIndex = volumes.indexOf(currentVolume);
   const prevIndex = currentIndex > 0 ? currentIndex - 1 : null;
@@ -30,7 +33,7 @@ export default function VolumeDetail() {
         ))}
       </ul>
       <Image
-        src={`/images/${slug}.png`}
+        src={currentVolume.cover}
         height={230}
         width={140}
         alt={`The volume cover of ${currentVolume.title}`}
@@ -41,6 +44,7 @@ export default function VolumeDetail() {
             Previous Volume: {prevVolume.title}
           </Link>
         )}
+        <br />
         {nextVolume !== null && (
           <Link href={`/volumes/${nextVolume.slug}`}>
             Next Volume: {nextVolume.title}
