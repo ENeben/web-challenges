@@ -1,11 +1,14 @@
+import { useRouter } from "next/router";
 import { volumes } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Return() {
-  const currentVolume = volumes.find(
-    ({ slug }) => slug === "the-return-of-the-king"
-  );
+export default function VolumeDetail() {
+  const router = useRouter();
+  const { slug } = router.query;
+  console.log("slug: ", slug);
+
+  const currentVolume = volumes.find((volume) => volume.slug === slug);
 
   const currentIndex = volumes.indexOf(currentVolume);
   const prevIndex = currentIndex > 0 ? currentIndex - 1 : null;
@@ -27,10 +30,10 @@ export default function Return() {
         ))}
       </ul>
       <Image
-        src="/images/the-return-of-the-king.png"
+        src={`/images/${slug}.png`}
         height={230}
         width={140}
-        alt="The volume cover of the return of the king"
+        alt={`The volume cover of ${currentVolume.title}`}
       />
       <section className="prev-next-links">
         {prevVolume !== null && (
