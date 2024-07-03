@@ -33,9 +33,6 @@ export default function App({ Component, pageProps }) {
   const isAllLightsOn = lights.length === switchedOnSum;
   const isAllLightsOff = switchedOnSum === 0;
 
-  // console.log(isAllLightsOn);
-  // console.log(isAllLightsOff);
-
   function handleLightsOn() {
     setLights(
       lights.map((light) => {
@@ -52,10 +49,8 @@ export default function App({ Component, pageProps }) {
     );
   }
 
-  // console.log(lights);
-
   return (
-    <Layout isAllLightsOff={isAllLightsOff}>
+    <Layout isAllLightsOff={isAllLightsOff} switchedOnSum={switchedOnSum}>
       <GlobalStyle />
       <Component
         {...pageProps}

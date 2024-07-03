@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { swcMinify } from "@/next.config";
 
 const StyledLayout = styled.div`
   color: white;
@@ -10,7 +11,9 @@ const Background = styled.div`
   inset: 0;
   background-color: black;
   z-index: -1;
-  filter: ${({ $isDimmed }) => ($isDimmed ? "brightness(70%)" : "none")};
+  filter: ${({ $switchedOnSum }) => `brightness(${$switchedOnSum * 10 + 60}%)`};
+
+  /* filter: ${({ $isDimmed }) => ($isDimmed ? "brightness(70%)" : "none")}; */
   transition: filter 1.2s;
 `;
 
@@ -26,10 +29,10 @@ const Content = styled.div`
   padding: 32px 0;
 `;
 
-export default function Layout({ children, isAllLightsOff }) {
+export default function Layout({ children, isAllLightsOff, switchedOnSum }) {
   return (
     <StyledLayout>
-      <Background $isDimmed={isAllLightsOff}>
+      <Background $isDimmed={isAllLightsOff} $switchedOnSum={switchedOnSum}>
         <StyledImage src="/images/home.jpg" fill alt="" />
       </Background>
       <Content>{children}</Content>
