@@ -22,7 +22,6 @@ export default function RandomFishPage() {
         </li>
         <li>category: {randomFish.category}</li>
       </ul>
-      {/* <Link href="/products/random">Load another random fish</Link> */}
       <Link href="/products">Back to all fishes</Link>
     </>
   );
