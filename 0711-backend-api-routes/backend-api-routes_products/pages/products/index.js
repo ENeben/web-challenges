@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import Link from "next/link";
 
 export default function Products() {
   const { data: fishes, isLoading } = useSWR("/api/products");
@@ -15,6 +16,7 @@ export default function Products() {
     <ul>
       {fishes.map((fish) => (
         <li key={fish.id}>
+          <Link href={`/products/${fish.id}`}>Go to {fish.name}</Link>
           <ul>
             <li>name: {fish.name}</li>
             <li>description: {fish.description}</li>

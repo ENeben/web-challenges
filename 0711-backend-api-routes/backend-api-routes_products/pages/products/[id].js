@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function SingleFishPage() {
   const router = useRouter();
@@ -16,12 +17,15 @@ export default function SingleFishPage() {
   }
 
   return (
-    <ul>
-      <li>name: {SingleFish.name}</li>
-      <li>description: {SingleFish.description}</li>
-      <li>price: {SingleFish.price}</li>
-      <li>currency: {SingleFish.currency}</li>
-      <li>category: {SingleFish.category}</li>
-    </ul>
+    <>
+      <ul>
+        <li>name: {SingleFish.name}</li>
+        <li>description: {SingleFish.description}</li>
+        <li>price: {SingleFish.price}</li>
+        <li>currency: {SingleFish.currency}</li>
+        <li>category: {SingleFish.category}</li>
+      </ul>
+      <Link href="/products">Back to all fishes</Link>
+    </>
   );
 }
