@@ -65,3 +65,7 @@ export function getAllProducts() {
 export function getProductById(id) {
   return products.find((product) => product.id === id);
 }
+
+export function getRandomProduct() {
+  return products[Math.floor(Math.random() * products.length)];
+}

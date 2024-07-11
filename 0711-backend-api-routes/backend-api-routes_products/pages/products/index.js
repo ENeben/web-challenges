@@ -13,19 +13,23 @@ export default function Products() {
   }
 
   return (
-    <ul>
-      {fishes.map((fish) => (
-        <li key={fish.id}>
-          <Link href={`/products/${fish.id}`}>Go to {fish.name}</Link>
-          <ul>
-            <li>name: {fish.name}</li>
-            <li>description: {fish.description}</li>
-            <li>price: {fish.price}</li>
-            <li>currency: {fish.currency}</li>
-            <li>category: {fish.category}</li>
-          </ul>
-        </li>
-      ))}
-    </ul>
+    <>
+      <Link href={"/products/random"}>Go to random fish</Link>
+      <ul>
+        {fishes.map((fish) => (
+          <li key={fish.id}>
+            <Link href={`/products/${fish.id}`}>Go to {fish.name}</Link>
+            <ul>
+              <li>name: {fish.name}</li>
+              <li>description: {fish.description}</li>
+              <li>
+                price: {fish.price} {fish.currency}
+              </li>
+              <li>category: {fish.category}</li>
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
