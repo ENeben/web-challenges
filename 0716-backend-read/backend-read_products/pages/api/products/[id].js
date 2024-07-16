@@ -6,6 +6,8 @@ export default async function handler(request, response) {
   const { id } = request.query;
 
   if (request.method === "GET") {
+    // populate sagt quasi: füge hier die daten der zugehörigen id aus dem anderen schema ein:
+
     const fish = await Product.findById(id).populate("reviews");
 
     if (!fish) {
