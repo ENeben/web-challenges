@@ -8,3 +8,9 @@ export const ProductCard = styled.article`
 export const ReviewTitle = styled.span`
   font-weight: bold;
 `;
+
+export const ReviewBox = styled.article`
+  padding: 0.2rem;
+  margin: 0.5rem;
+  border: 1px solid #88888880;
+`;

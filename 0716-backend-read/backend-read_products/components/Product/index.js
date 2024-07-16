@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { ProductCard } from "./Product.styled";
 import { StyledLink } from "../Link/Link.styled";
 import { ReviewTitle } from "./Product.styled";
+import { ReviewBox } from "./Product.styled";
 
 export default function Product() {
   const router = useRouter();
@@ -27,13 +28,13 @@ export default function Product() {
       </p>
       {data.reviews ? (
         data.reviews.map((review) => (
-          <article key={review._id}>
+          <ReviewBox key={review._id}>
             <p>
-              Review: <ReviewTitle>{review.title}</ReviewTitle> <br />
-              Text: {review.text} <br />
+              <ReviewTitle>{review.title}</ReviewTitle> <br />
+              Review: {review.text} <br />
               Rating: {review.rating}
             </p>
-          </article>
+          </ReviewBox>
         ))
       ) : (
         <p>No reviews available</p>
