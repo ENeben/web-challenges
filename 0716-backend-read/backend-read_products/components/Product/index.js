@@ -26,7 +26,7 @@ export default function Product() {
       <p>
         Price: {data.price} {data.currency}
       </p>
-      {data.reviews ? (
+      {data.reviews.length > 0 ? (
         data.reviews.map((review) => (
           <ReviewBox key={review._id}>
             <p>
