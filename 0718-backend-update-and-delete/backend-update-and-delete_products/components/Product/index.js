@@ -5,6 +5,7 @@ import { StyledLink } from "../Link/Link.styled";
 import Comments from "../Comments";
 import { useState } from "react";
 import ProductForm from "../ProductForm";
+import Button from "../Button/Button";
 
 export default function Product() {
   const [isEditing, setIsEditing] = useState(false);
@@ -58,17 +59,13 @@ export default function Product() {
 
   return (
     <ProductCard>
-      <button
-        type="button"
+      <Button
+        text={isEditing ? "LEAVE EDIT MODE" : "EDIT"}
         onClick={() => {
           setIsEditing(!isEditing);
         }}
-      >
-        {isEditing ? "LEAVE EDIT MODE" : "EDIT"}
-      </button>
-      <button type="button" onClick={() => handleDeleteProduct(id)}>
-        DELETE
-      </button>
+      />
+      <Button text="DELETE" onClick={() => handleDeleteProduct(id)} />
       {isEditing && (
         <ProductForm
           onSubmit={handleEditProduct}
